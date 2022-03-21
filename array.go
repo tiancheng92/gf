@@ -122,6 +122,12 @@ func ArrayQuickSort[T any](array []T, less func(array []T, i, j int) bool) []T {
 	return quickSort(array, 0, n, maxDepth(n), less)
 }
 
+// ArrayHeapSort 数组堆排序
+func ArrayHeapSort[T any](array []T, less func(array []T, i, j int) bool) []T {
+	n := len(array)
+	return heapSort(array, 0, n, less)
+}
+
 func maxDepth(n int) int {
 	var depth int
 	for i := n; i > 0; i >>= 1 {

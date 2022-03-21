@@ -99,6 +99,16 @@ func main() {
 	}))
 	fmt.Println("")
 
+	fmt.Println("Array Heap Sort")
+	fmt.Println("-----------------------------")
+	fmt.Println(gf.ArrayHeapSort([]int{10, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 99, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 2, 3, 14, 5}, func(arr []int, i, j int) bool {
+		return arr[i] < arr[j]
+	}))
+	fmt.Println(gf.ArrayHeapSort([]string{"z", "z", "a", "y", "b", "c", "d", "z", "z", "a", "y", "b", "c", "d", "z", "z", "a", "y", "k", "b", "c", "d", "z", "z", "a", "y", "b", "c", "d", "z", "z", "a", "y", "b", "c", "d"}, func(arr []string, i, j int) bool {
+		return arr[i] < arr[j]
+	}))
+	fmt.Println("")
+
 	fmt.Println("Convent String Bytes")
 	fmt.Println("-----------------------------")
 	fmt.Println(gf.StringToBytes("123"))

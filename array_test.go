@@ -612,3 +612,33 @@ func TestArrayBubbleSort(t *testing.T) {
 		})
 	}
 }
+
+func TestArrayHeapSort(t *testing.T) {
+	type args struct {
+		array []int
+		less  func(array []int, i, j int) bool
+	}
+	tests := []struct {
+		name string
+		args args
+		want []int
+	}{
+		{
+			name: "success",
+			args: args{
+				array: []int{10, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 99, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 2, 3, 14, 5},
+				less: func(array []int, i, j int) bool {
+					return array[i] < array[j]
+				},
+			},
+			want: []int{2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 5, 5, 5, 5, 5, 5, 5, 5, 10, 10, 10, 10, 10, 10, 10, 10, 14, 14, 14, 14, 14, 14, 14, 14, 99},
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := ArrayHeapSort(tt.args.array, tt.args.less); !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("ArrayHeapSort() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
