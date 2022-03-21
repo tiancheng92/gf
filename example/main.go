@@ -69,6 +69,36 @@ func main() {
 	fmt.Println(gf.ArrayReverse([]string{"a", "b", "c", "d"}))
 	fmt.Println("")
 
+	fmt.Println("Array Insertion Sort")
+	fmt.Println("-----------------------------")
+	fmt.Println(gf.ArrayInsertionSort([]int{10, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 99, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 2, 3, 14, 5}, func(arr []int, i, j int) bool {
+		return arr[i] < arr[j]
+	}))
+	fmt.Println(gf.ArrayInsertionSort([]string{"z", "z", "a", "y", "b", "c", "d", "z", "z", "a", "y", "b", "c", "d", "z", "z", "a", "y", "b", "c", "d", "z", "k", "z", "a", "y", "b", "c", "d", "z", "z", "a", "y", "b", "c", "d"}, func(arr []string, i, j int) bool {
+		return arr[i] < arr[j]
+	}))
+	fmt.Println("")
+
+	fmt.Println("Array Quick Sort")
+	fmt.Println("-----------------------------")
+	fmt.Println(gf.ArrayQuickSort([]int{10, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 99, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 2, 3, 14, 5}, func(arr []int, i, j int) bool {
+		return arr[i] < arr[j]
+	}))
+	fmt.Println(gf.ArrayQuickSort([]string{"z", "z", "a", "y", "b", "c", "d", "z", "z", "a", "y", "b", "c", "d", "z", "z", "a", "y", "k", "b", "c", "d", "z", "z", "a", "y", "b", "c", "d", "z", "z", "a", "y", "b", "c", "d"}, func(arr []string, i, j int) bool {
+		return arr[i] < arr[j]
+	}))
+	fmt.Println("")
+
+	fmt.Println("Array Bubble Sort")
+	fmt.Println("-----------------------------")
+	fmt.Println(gf.ArrayBubbleSort([]int{10, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 99, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 2, 3, 14, 5}, func(arr []int, i, j int) bool {
+		return arr[i] < arr[j]
+	}))
+	fmt.Println(gf.ArrayBubbleSort([]string{"z", "z", "a", "y", "b", "c", "d", "z", "z", "a", "y", "b", "c", "d", "z", "z", "a", "y", "k", "b", "c", "d", "z", "z", "a", "y", "b", "c", "d", "z", "z", "a", "y", "b", "c", "d"}, func(arr []string, i, j int) bool {
+		return arr[i] < arr[j]
+	}))
+	fmt.Println("")
+
 	fmt.Println("Convent String Bytes")
 	fmt.Println("-----------------------------")
 	fmt.Println(gf.StringToBytes("123"))
@@ -101,5 +131,4 @@ func main() {
 	fmt.Println("-----------------------------")
 	url, _ := gf.UrlFormat("https://u:p@www.a.com:9999////////b/c/d.e?i=2&&i=1&&&&&&&&g=2&h=3&h=3&h=3&f=4#5")
 	fmt.Println(url)
-
 }
