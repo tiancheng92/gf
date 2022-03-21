@@ -53,6 +53,16 @@ func main() {
 	fmt.Println(gf.ArrayDifference([]string{"a", "b", "z", "y"}, []string{"a", "b", "c"}))
 	fmt.Println("")
 
+	fmt.Println("Array Difference")
+	fmt.Println("-----------------------------")
+	fmt.Println(gf.ArrayFilter([]int{1, 2, 3, 4, 5}, func(v int) bool {
+		return v%2 == 0
+	}))
+	fmt.Println(gf.ArrayFilter([]string{"a", "b", "c", "d"}, func(v string) bool {
+		return v != "c"
+	}))
+	fmt.Println("")
+
 	fmt.Println("Convent String Bytes")
 	fmt.Println("-----------------------------")
 	fmt.Println(gf.StringToBytes("123"))

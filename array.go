@@ -71,3 +71,13 @@ func ArrayDifference[T any](array1, array2 []T) []T {
 	}
 	return arr
 }
+
+func ArrayFilter[T any](array []T, predicate func(T) bool) []T {
+	arr := make([]T, 0)
+	for i := range array {
+		if predicate(array[i]) {
+			arr = append(arr, array[i])
+		}
+	}
+	return arr
+}

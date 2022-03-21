@@ -140,6 +140,7 @@ func TestArrayDeduplicateFloat(t *testing.T) {
 		})
 	}
 }
+
 func TestArrayDeduplicateString(t *testing.T) {
 	type args struct {
 		array []string
@@ -461,6 +462,36 @@ func TestArrayDifferenceAny(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := ArrayDifference(tt.args.array1, tt.args.array2); !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("ArrayDifference() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
+func TestArrayFilter(t *testing.T) {
+	type args struct {
+		array     []int
+		predicate func(int) bool
+	}
+	tests := []struct {
+		name string
+		args args
+		want []int
+	}{
+		{
+			name: "success",
+			args: args{
+				array: []int{1, 2, 3, 4, 5, 6, 7, 8},
+				predicate: func(i int) bool {
+					return i%2 == 0
+				},
+			},
+			want: []int{2, 4, 6, 8},
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := ArrayFilter(tt.args.array, tt.args.predicate); !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("ArrayFilter() = %v, want %v", got, tt.want)
 			}
 		})
 	}
