@@ -212,7 +212,7 @@ func TestArrayIntersectInt(t *testing.T) {
 		args args
 		want []int
 	}{
-		{name: "success", args: args{array1: []int{1, 2, 3}, array2: []int{2, 3, 4}}, want: []int{2, 3}},
+		{name: "success", args: args{array1: []int{1, 2, 2, 2, 3}, array2: []int{2, 3, 4}}, want: []int{2, 3}},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -317,7 +317,7 @@ func TestArrayUnionFloat(t *testing.T) {
 		args args
 		want []float64
 	}{
-		{name: "success", args: args{array1: []float64{1, 2, 4}, array2: []float64{3, 4, 5}}, want: []float64{1, 2, 4, 3, 5}},
+		{name: "success", args: args{array1: []float64{1, 1, 1, 1, 2, 4}, array2: []float64{3, 4, 5}}, want: []float64{1, 2, 4, 3, 5}},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -381,7 +381,7 @@ func TestArrayDifferenceInt(t *testing.T) {
 		want []int
 	}{
 		{name: "success", args: args{
-			array1: []int{1, 2},
+			array1: []int{1, 1, 1, 2},
 			array2: []int{2, 3},
 		}, want: []int{1}},
 	}
