@@ -6,11 +6,7 @@ import (
 	"strconv"
 )
 
-type Float interface {
-	float64 | float32
-}
-
-func FloatKeepDecimal[F Float](floatValue F, decimalCount int) F {
+func FloatKeepDecimal[F float64 | float32](floatValue F, decimalCount int) F {
 	bitSize := 64
 	if reflect.TypeOf(floatValue).Kind() == reflect.Float32 {
 		bitSize = 32
