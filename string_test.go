@@ -122,3 +122,29 @@ func TestStringParseGzip(t *testing.T) {
 		})
 	}
 }
+
+func TestStringJoin(t *testing.T) {
+	type args struct {
+		variables []string
+	}
+	tests := []struct {
+		name string
+		args args
+		want string
+	}{
+		{
+			name: "success",
+			args: args{
+				[]string{"a", "b"},
+			},
+			want: "ab",
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := StringJoin(tt.args.variables...); got != tt.want {
+				t.Errorf("StringJoin() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}

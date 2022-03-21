@@ -4,8 +4,24 @@ import (
 	"bytes"
 	"compress/gzip"
 	"io/ioutil"
+	"strings"
 	"unsafe"
 )
+
+func StringJoin(variables ...string) string {
+	var (
+		n int
+		b strings.Builder
+	)
+	for i := range variables {
+		n += len(variables[i])
+	}
+	b.Grow(n)
+	for i := range variables {
+		b.WriteString(variables[i])
+	}
+	return b.String()
+}
 
 func StringToBytes(s string) []byte {
 	return *(*[]byte)(unsafe.Pointer(

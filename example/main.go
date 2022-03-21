@@ -74,4 +74,16 @@ func main() {
 	fmt.Printf("ole size: %d, new size: %d, value: %v\n", len(str), len(b), b)
 	s, _ := gf.StringParseGzip(b)
 	fmt.Printf("value: %v\n", s)
+	fmt.Println("")
+
+	fmt.Println("String Join")
+	fmt.Println("-----------------------------")
+	fmt.Println(gf.StringJoin("a", "b", "c"))
+	fmt.Println("")
+
+	fmt.Println("URL Format")
+	fmt.Println("-----------------------------")
+	url, _ := gf.UrlFormat("https://u:p@www.a.com:9999////////b/c/d.e?i=2&&i=1&&&&&&&&g=2&h=3&h=3&h=3&f=4#5")
+	fmt.Println(url)
+
 }
