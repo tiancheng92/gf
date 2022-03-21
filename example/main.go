@@ -63,6 +63,12 @@ func main() {
 	}))
 	fmt.Println("")
 
+	fmt.Println("Array Reverse")
+	fmt.Println("-----------------------------")
+	fmt.Println(gf.ArrayReverse([]int{1, 2, 3, 4, 5}))
+	fmt.Println(gf.ArrayReverse([]string{"a", "b", "c", "d"}))
+	fmt.Println("")
+
 	fmt.Println("Convent String Bytes")
 	fmt.Println("-----------------------------")
 	fmt.Println(gf.StringToBytes("123"))

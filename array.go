@@ -1,6 +1,8 @@
 package gf
 
-import "reflect"
+import (
+	"reflect"
+)
 
 // ArrayDeduplicate 数组去重
 func ArrayDeduplicate[T any](array []T) []T {
@@ -72,12 +74,22 @@ func ArrayDifference[T any](array1, array2 []T) []T {
 	return arr
 }
 
+// ArrayFilter 数组过滤
 func ArrayFilter[T any](array []T, predicate func(T) bool) []T {
 	arr := make([]T, 0)
 	for i := range array {
 		if predicate(array[i]) {
 			arr = append(arr, array[i])
 		}
+	}
+	return arr
+}
+
+// ArrayReverse 数组反转
+func ArrayReverse[T any](array []T) []T {
+	arr := make([]T, len(array))
+	for i := range array {
+		arr[len(array)-i-1] = array[i]
 	}
 	return arr
 }
