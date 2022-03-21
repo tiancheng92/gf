@@ -6,11 +6,11 @@ import "reflect"
 func ArrayDeduplicate[T any](array []T) []T {
 	var (
 		arr = make([]T, 0)
-		m   = make(map[any]struct{})
+		set = make(map[any]struct{})
 	)
 	for i := range array {
-		if _, ok := m[array[i]]; !ok {
-			m[array[i]] = struct{}{}
+		if _, ok := set[array[i]]; !ok {
+			set[array[i]] = struct{}{}
 			arr = append(arr, array[i])
 		}
 	}
@@ -36,7 +36,7 @@ func ArrayContains[T any](array []T, val T) bool {
 func ArrayIntersect[T any](array1, array2 []T) []T {
 	var (
 		set = make(map[any]struct{})
-		res = make([]T, 0)
+		arr = make([]T, 0)
 	)
 
 	for i := range array1 {
@@ -45,37 +45,37 @@ func ArrayIntersect[T any](array1, array2 []T) []T {
 
 	for i := range array2 {
 		if _, ok := set[array2[i]]; ok {
-			res = append(res, array2[i])
+			arr = append(arr, array2[i])
 		}
 	}
-	return res
+	return arr
 }
 
 // ArrayUnion 数组并集
 func ArrayUnion[T any](array1, array2 []T) []T {
 	var (
 		set = make(map[any]struct{})
-		res = make([]T, 0)
+		arr = make([]T, 0)
 	)
 
-	res = ArrayDeduplicate(array1)
+	arr = ArrayDeduplicate(array1)
 	for i := range array1 {
 		set[array1[i]] = struct{}{}
 	}
 
 	for i := range array2 {
 		if _, ok := set[array2[i]]; !ok {
-			res = append(res, array2[i])
+			arr = append(arr, array2[i])
 		}
 	}
-	return res
+	return arr
 }
 
 // ArrayDifference 数组差集
 func ArrayDifference[T any](array1, array2 []T) []T {
 	var (
 		set = make(map[any]struct{})
-		res = make([]T, 0)
+		arr = make([]T, 0)
 	)
 
 	inter := ArrayIntersect(array1, array2)
@@ -86,8 +86,8 @@ func ArrayDifference[T any](array1, array2 []T) []T {
 	array1 = ArrayDeduplicate(array1)
 	for i := range array1 {
 		if _, ok := set[array1[i]]; !ok {
-			res = append(res, array1[i])
+			arr = append(arr, array1[i])
 		}
 	}
-	return res
+	return arr
 }

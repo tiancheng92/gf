@@ -57,4 +57,21 @@ func main() {
 	fmt.Println("-----------------------------")
 	fmt.Println(gf.StringToBytes("123"))
 	fmt.Println(gf.BytesToString([]byte{49, 50, 51}))
+	fmt.Println("")
+
+	fmt.Println("Float Keep Decimal")
+	fmt.Println("-----------------------------")
+	f64 := gf.FloatKeepDecimal(1.2345, 2)
+	fmt.Printf("type: %T, value: %v\n", f64, f64)
+	f32 := gf.FloatKeepDecimal(float32(1.2345), 3)
+	fmt.Printf("type: %T, value: %v\n", f32, f32)
+	fmt.Println("")
+
+	fmt.Println("String Gzip")
+	fmt.Println("-----------------------------")
+	str := "12345678901234567890123456789012345678901234567890123456789012345678901234567890"
+	b, _ := gf.StringCreateGzip(str)
+	fmt.Printf("ole size: %d, new size: %d, value: %v\n", len(str), len(b), b)
+	s, _ := gf.StringParseGzip(b)
+	fmt.Printf("value: %v\n", s)
 }
