@@ -23,8 +23,8 @@ func TestFloat32KeepDecimal(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := FloatKeepDecimal(tt.args.floatValue, tt.args.decimalCount); got != tt.want {
-				t.Errorf("FloatKeepDecimal() = %v, want %v", got, tt.want)
+			if got := FloatRound(tt.args.floatValue, tt.args.decimalCount); got != tt.want {
+				t.Errorf("FloatRound() = %v, want %v", got, tt.want)
 			}
 		})
 	}
@@ -51,8 +51,8 @@ func TestFloat64KeepDecimal(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := FloatKeepDecimal(tt.args.floatValue, tt.args.decimalCount); got != tt.want {
-				t.Errorf("FloatKeepDecimal() = %v, want %v", got, tt.want)
+			if got := FloatRound(tt.args.floatValue, tt.args.decimalCount); got != tt.want {
+				t.Errorf("FloatRound() = %v, want %v", got, tt.want)
 			}
 		})
 	}

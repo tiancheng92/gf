@@ -107,9 +107,9 @@ func main() {
 
 	fmt.Println("Float Keep Decimal")
 	fmt.Println("-----------------------------")
-	f64 := gf.FloatKeepDecimal(1.2345, 2)
+	f64 := gf.FloatRound(1.2345, 2)
 	fmt.Printf("type: %T, value: %v\n", f64, f64)
-	f32 := gf.FloatKeepDecimal(float32(1.2345), 3)
+	f32 := gf.FloatRound(float32(1.2345), 3)
 	fmt.Printf("type: %T, value: %v\n", f32, f32)
 	fmt.Println("")
 
