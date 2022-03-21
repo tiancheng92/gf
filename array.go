@@ -5,7 +5,7 @@ import "reflect"
 // ArrayDeduplicate 数组去重
 func ArrayDeduplicate[T any](array []T) []T {
 	arr := make([]T, 0)
-	set := NewSet()
+	set := NewSet[T]()
 	for i := range array {
 		if !set.Has(array[i]) {
 			set.Add(array[i])
@@ -33,10 +33,8 @@ func ArrayContains[T any](array []T, val T) bool {
 // ArrayIntersect 数组交集
 func ArrayIntersect[T any](array1, array2 []T) []T {
 	arr := make([]T, 0)
-	set := NewSet()
-	for i := range array1 {
-		set.Add(array1[i])
-	}
+	set := NewSet[T]()
+	set.Add(array1...)
 	for i := range array2 {
 		if set.Has(array2[i]) {
 			arr = append(arr, array2[i])
@@ -48,11 +46,9 @@ func ArrayIntersect[T any](array1, array2 []T) []T {
 // ArrayUnion 数组并集
 func ArrayUnion[T any](array1, array2 []T) []T {
 	arr := make([]T, 0)
-	set := NewSet()
+	set := NewSet[T]()
 	arr = ArrayDeduplicate(array1)
-	for i := range array1 {
-		set.Add(array1[i])
-	}
+	set.Add(array1...)
 	for i := range array2 {
 		if !set.Has(array2[i]) {
 			arr = append(arr, array2[i])
@@ -64,11 +60,9 @@ func ArrayUnion[T any](array1, array2 []T) []T {
 // ArrayDifference 数组差集
 func ArrayDifference[T any](array1, array2 []T) []T {
 	arr := make([]T, 0)
-	set := NewSet()
+	set := NewSet[T]()
 	inter := ArrayIntersect(array1, array2)
-	for i := range inter {
-		set.Add(inter[i])
-	}
+	set.Add(inter...)
 	array1 = ArrayDeduplicate(array1)
 	for i := range array1 {
 		if !set.Has(array1[i]) {

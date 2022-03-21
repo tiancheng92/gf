@@ -1,18 +1,18 @@
 package gf
 
-type Set map[any]struct{}
+type Set[T any] map[any]struct{}
 
-func NewSet() Set {
-	return make(Set)
+func NewSet[T any]() Set[T] {
+	return make(Set[T])
 }
 
-func (s Set) Add(values ...any) {
+func (s Set[T]) Add(values ...T) {
 	for i := range values {
 		s[values[i]] = struct{}{}
 	}
 }
 
-func (s Set) Has(value any) bool {
+func (s Set[T]) Has(value T) bool {
 	_, ok := s[value]
 	return ok
 }
