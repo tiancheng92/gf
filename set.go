@@ -1,8 +1,8 @@
 package gf
 
-type Set[T any] map[any]struct{}
+type Set[T comparable] map[any]struct{}
 
-func NewSet[T any]() Set[T] {
+func NewSet[T comparable]() Set[T] {
 	return make(Set[T])
 }
 

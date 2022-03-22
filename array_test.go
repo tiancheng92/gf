@@ -71,36 +71,6 @@ func TestArrayContainsString(t *testing.T) {
 	}
 }
 
-func TestArrayContainsAny(t *testing.T) {
-	type args struct {
-		array []any
-		val   any
-	}
-	tests := []struct {
-		name string
-		args args
-		want bool
-	}{
-		{name: "any", args: args{array: []any{1, "b", nil, struct {
-			Name string
-		}{Name: "test"}}, val: struct {
-			Name string
-		}{Name: "test"}}, want: true},
-		{name: "any", args: args{array: []any{1, "b", nil, struct {
-			Name string
-		}{Name: "test"}}, val: struct {
-			Name string
-		}{Name: "test1"}}, want: false},
-	}
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			if got := ArrayContains(tt.args.array, tt.args.val); got != tt.want {
-				t.Errorf("ArrayContains() = %v, want %v", got, tt.want)
-			}
-		})
-	}
-}
-
 func TestArrayDeduplicateInt(t *testing.T) {
 	type args struct {
 		array []int
@@ -161,38 +131,18 @@ func TestArrayDeduplicateString(t *testing.T) {
 	}
 }
 
-func TestArrayDeduplicateAny(t *testing.T) {
-	type args struct {
-		array []any
-	}
-	tests := []struct {
-		name string
-		args args
-		want []any
-	}{
-		{name: "success", args: args{array: []any{1, "b", nil, nil, "1"}}, want: []any{1, "b", nil, "1"}},
-	}
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			if got := ArrayDeduplicate(tt.args.array); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("ArrayDeduplicate() = %v, want %v", got, tt.want)
-			}
-		})
-	}
-}
-
 func TestArrayEqual(t *testing.T) {
 	type args struct {
-		a []any
-		b []any
+		a []int
+		b []int
 	}
 	tests := []struct {
 		name string
 		args args
 		want bool
 	}{
-		{name: "success", args: args{a: []any{1, 2, 3}, b: []any{1, 2, 3}}, want: true},
-		{name: "failed", args: args{a: []any{1, 2, 3}, b: []any{1, 2, ""}}, want: false},
+		{name: "success", args: args{a: []int{1, 2, 3}, b: []int{1, 2, 3}}, want: true},
+		{name: "failed", args: args{a: []int{1, 2, 3}, b: []int{1, 2, 4}}, want: false},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -266,27 +216,6 @@ func TestArrayIntersectString(t *testing.T) {
 	}
 }
 
-func TestArrayIntersectAny(t *testing.T) {
-	type args struct {
-		array1 []any
-		array2 []any
-	}
-	tests := []struct {
-		name string
-		args args
-		want []any
-	}{
-		{name: "success", args: args{array1: []any{1, "a", 2.2, "b", "c"}, array2: []any{1, "x", "a", "z", 2.2}}, want: []any{1, "a", 2.2}},
-	}
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			if got := ArrayIntersect(tt.args.array1, tt.args.array2); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("ArrayIntersect() = %v, want %v", got, tt.want)
-			}
-		})
-	}
-}
-
 func TestArrayUnionInt(t *testing.T) {
 	type args struct {
 		array1 []int
@@ -340,27 +269,6 @@ func TestArrayUnionString(t *testing.T) {
 		want []string
 	}{
 		{name: "success", args: args{array1: []string{"a", "b", "z"}, array2: []string{"c", "z", "e"}}, want: []string{"a", "b", "z", "c", "e"}},
-	}
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			if got := ArrayUnion(tt.args.array1, tt.args.array2); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("ArrayUnion() = %v, want %v", got, tt.want)
-			}
-		})
-	}
-}
-
-func TestArrayUnionAny(t *testing.T) {
-	type args struct {
-		array1 []any
-		array2 []any
-	}
-	tests := []struct {
-		name string
-		args args
-		want []any
-	}{
-		{name: "success", args: args{array1: []any{"a", 2, "z"}, array2: []any{"c", "z", 5.5}}, want: []any{"a", 2, "z", "c", 5.5}},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -433,30 +341,6 @@ func TestArrayDifferenceString(t *testing.T) {
 			array1: []string{"1", "2"},
 			array2: []string{"2", "3"},
 		}, want: []string{"1"}},
-	}
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			if got := ArrayDifference(tt.args.array1, tt.args.array2); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("ArrayDifference() = %v, want %v", got, tt.want)
-			}
-		})
-	}
-}
-
-func TestArrayDifferenceAny(t *testing.T) {
-	type args struct {
-		array1 []any
-		array2 []any
-	}
-	tests := []struct {
-		name string
-		args args
-		want []any
-	}{
-		{name: "success", args: args{
-			array1: []any{"1", 2, 3.0},
-			array2: []any{1, 2, "3"},
-		}, want: []any{"1", 3.0}},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
