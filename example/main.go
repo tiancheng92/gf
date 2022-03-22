@@ -71,42 +71,72 @@ func main() {
 
 	fmt.Println("Array Insertion Sort")
 	fmt.Println("-----------------------------")
-	fmt.Println(gf.ArrayInsertionSort([]int{10, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 99, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 2, 3, 14, 5}, func(arr []int, i, j int) bool {
+	arr1 := []int{10, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 99, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 2, 3, 14, 5}
+	gf.ArrayInsertionSort(arr1, func(arr []int, i, j int) bool {
 		return arr[i] < arr[j]
-	}))
-	fmt.Println(gf.ArrayInsertionSort([]string{"z", "z", "a", "y", "b", "c", "d", "z", "z", "a", "y", "b", "c", "d", "z", "z", "a", "y", "b", "c", "d", "z", "k", "z", "a", "y", "b", "c", "d", "z", "z", "a", "y", "b", "c", "d"}, func(arr []string, i, j int) bool {
+	})
+	fmt.Println(arr1)
+	arr2 := []string{"z", "z", "a", "y", "b", "c", "d", "z", "z", "a", "y", "b", "c", "d", "z", "z", "a", "y", "b", "c", "d", "z", "k", "z", "a", "y", "b", "c", "d", "z", "z", "a", "y", "b", "c", "d"}
+	gf.ArrayInsertionSort(arr2, func(arr []string, i, j int) bool {
 		return arr[i] < arr[j]
-	}))
+	})
+	fmt.Println(arr2)
 	fmt.Println("")
 
 	fmt.Println("Array Quick Sort")
 	fmt.Println("-----------------------------")
-	fmt.Println(gf.ArrayQuickSort([]int{10, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 99, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 2, 3, 14, 5}, func(arr []int, i, j int) bool {
+	arr1 = []int{10, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 99, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 2, 3, 14, 5}
+	gf.ArraySort(arr1, func(arr []int, i, j int) bool {
 		return arr[i] < arr[j]
-	}))
-	fmt.Println(gf.ArrayQuickSort([]string{"z", "z", "a", "y", "b", "c", "d", "z", "z", "a", "y", "b", "c", "d", "z", "z", "a", "y", "k", "b", "c", "d", "z", "z", "a", "y", "b", "c", "d", "z", "z", "a", "y", "b", "c", "d"}, func(arr []string, i, j int) bool {
+	})
+	fmt.Println(arr1)
+	arr2 = []string{"z", "z", "a", "y", "b", "c", "d", "z", "z", "a", "y", "b", "c", "d", "z", "z", "a", "y", "b", "c", "d", "z", "k", "z", "a", "y", "b", "c", "d", "z", "z", "a", "y", "b", "c", "d"}
+	gf.ArraySort(arr2, func(arr []string, i, j int) bool {
 		return arr[i] < arr[j]
-	}))
+	})
+	fmt.Println(arr2)
 	fmt.Println("")
 
 	fmt.Println("Array Bubble Sort")
 	fmt.Println("-----------------------------")
-	fmt.Println(gf.ArrayBubbleSort([]int{10, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 99, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 2, 3, 14, 5}, func(arr []int, i, j int) bool {
+	arr1 = []int{10, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 99, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 2, 3, 14, 5}
+	gf.ArrayBubbleSort(arr1, func(arr []int, i, j int) bool {
 		return arr[i] < arr[j]
-	}))
-	fmt.Println(gf.ArrayBubbleSort([]string{"z", "z", "a", "y", "b", "c", "d", "z", "z", "a", "y", "b", "c", "d", "z", "z", "a", "y", "k", "b", "c", "d", "z", "z", "a", "y", "b", "c", "d", "z", "z", "a", "y", "b", "c", "d"}, func(arr []string, i, j int) bool {
+	})
+	fmt.Println(arr1)
+	arr2 = []string{"z", "z", "a", "y", "b", "c", "d", "z", "z", "a", "y", "b", "c", "d", "z", "z", "a", "y", "b", "c", "d", "z", "k", "z", "a", "y", "b", "c", "d", "z", "z", "a", "y", "b", "c", "d"}
+	gf.ArrayBubbleSort(arr2, func(arr []string, i, j int) bool {
 		return arr[i] < arr[j]
-	}))
+	})
+	fmt.Println(arr2)
 	fmt.Println("")
 
 	fmt.Println("Array Heap Sort")
 	fmt.Println("-----------------------------")
-	fmt.Println(gf.ArrayHeapSort([]int{10, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 99, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 2, 3, 14, 5}, func(arr []int, i, j int) bool {
+	arr1 = []int{10, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 99, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 2, 3, 14, 5}
+	gf.ArrayHeapSort(arr1, func(arr []int, i, j int) bool {
 		return arr[i] < arr[j]
-	}))
-	fmt.Println(gf.ArrayHeapSort([]string{"z", "z", "a", "y", "b", "c", "d", "z", "z", "a", "y", "b", "c", "d", "z", "z", "a", "y", "k", "b", "c", "d", "z", "z", "a", "y", "b", "c", "d", "z", "z", "a", "y", "b", "c", "d"}, func(arr []string, i, j int) bool {
+	})
+	fmt.Println(arr1)
+	arr2 = []string{"z", "z", "a", "y", "b", "c", "d", "z", "z", "a", "y", "b", "c", "d", "z", "z", "a", "y", "b", "c", "d", "z", "k", "z", "a", "y", "b", "c", "d", "z", "z", "a", "y", "b", "c", "d"}
+	gf.ArrayHeapSort(arr2, func(arr []string, i, j int) bool {
 		return arr[i] < arr[j]
-	}))
+	})
+	fmt.Println(arr2)
+	fmt.Println("")
+
+	fmt.Println("Array Quick Sort")
+	fmt.Println("-----------------------------")
+	arr1 = []int{10, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 99, 2, 3, 14, 5, 10, 2, 3, 14, 5, 10, 2, 3, 14, 5}
+	gf.ArrayQuickSort(arr1, func(arr []int, i, j int) bool {
+		return arr[i] < arr[j]
+	})
+	fmt.Println(arr1)
+	arr2 = []string{"z", "z", "a", "y", "b", "c", "d", "z", "z", "a", "y", "b", "c", "d", "z", "z", "a", "y", "b", "c", "d", "z", "k", "z", "a", "y", "b", "c", "d", "z", "z", "a", "y", "b", "c", "d"}
+	gf.ArrayQuickSort(arr2, func(arr []string, i, j int) bool {
+		return arr[i] < arr[j]
+	})
+	fmt.Println(arr2)
 	fmt.Println("")
 
 	fmt.Println("Convent String Bytes")
