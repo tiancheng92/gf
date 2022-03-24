@@ -15,6 +15,7 @@ func main() {
 	fmt.Println(gf.ArrayContains([]int{1, 2, 3}, 1))
 	fmt.Println(gf.ArrayContains([]float64{1.2, 3.4, 5.6}, 7.8))
 	fmt.Println(gf.ArrayContains([]string{"a", "b", "c"}, "c"))
+	fmt.Println(gf.ArrayContains([][]string{{"1", "2"}, {"1"}}, []string{"1"}))
 	fmt.Println(gf.ArrayContains([]T{{1}, {2}, {3}}, T{2}))
 	fmt.Println("")
 

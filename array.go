@@ -19,12 +19,12 @@ func ArrayDeduplicate[T comparable](array []T) []T {
 }
 
 // ArrayEqual 数组比较
-func ArrayEqual[T comparable](array1, array2 []T) bool {
+func ArrayEqual[T any](array1, array2 []T) bool {
 	return reflect.DeepEqual(array1, array2)
 }
 
 // ArrayContains 数组包含
-func ArrayContains[T comparable](array []T, val T) bool {
+func ArrayContains[T any](array []T, val T) bool {
 	for i := range array {
 		if reflect.DeepEqual(array[i], val) {
 			return true
@@ -76,7 +76,7 @@ func ArrayDifference[T comparable](array1, array2 []T) []T {
 }
 
 // ArrayFilter 数组过滤
-func ArrayFilter[T comparable](array []T, predicate func(T) bool) []T {
+func ArrayFilter[T any](array []T, predicate func(T) bool) []T {
 	arr := make([]T, 0)
 	for i := range array {
 		if predicate(array[i]) {
@@ -87,7 +87,7 @@ func ArrayFilter[T comparable](array []T, predicate func(T) bool) []T {
 }
 
 // ArrayReverse 数组反转
-func ArrayReverse[T comparable](array []T) []T {
+func ArrayReverse[T any](array []T) []T {
 	arr := make([]T, len(array))
 	for i := range array {
 		arr[len(array)-i-1] = array[i]
@@ -96,7 +96,7 @@ func ArrayReverse[T comparable](array []T) []T {
 }
 
 // ArrayBubbleSort 数组冒泡排序
-func ArrayBubbleSort[T comparable](array []T, less func(array []T, i, j int) bool) {
+func ArrayBubbleSort[T any](array []T, less func(array []T, i, j int) bool) {
 	for i := 0; i <= len(array)-1; i++ {
 		for j := i; j <= len(array)-1; j++ {
 			if !less(array, i, j) {
@@ -107,7 +107,7 @@ func ArrayBubbleSort[T comparable](array []T, less func(array []T, i, j int) boo
 }
 
 // ArrayInsertionSort 数组插入排序
-func ArrayInsertionSort[T comparable](array []T, less func(array []T, i, j int) bool) {
+func ArrayInsertionSort[T any](array []T, less func(array []T, i, j int) bool) {
 	for i := 1; i < len(array); i++ {
 		for j := i; j > 0 && less(array, j, j-1); j-- {
 			array[j], array[j-1] = array[j-1], array[j]
@@ -116,14 +116,14 @@ func ArrayInsertionSort[T comparable](array []T, less func(array []T, i, j int) 
 }
 
 // ArraySort 数组排序(go原生排序)
-func ArraySort[T comparable](array []T, less func(array []T, i, j int) bool) {
+func ArraySort[T any](array []T, less func(array []T, i, j int) bool) {
 	sort.Slice(array, func(i, j int) bool {
 		return less(array, i, j)
 	})
 }
 
 // ArrayHeapSort 数组堆排序
-func ArrayHeapSort[T comparable](array []T, less func(array []T, i, j int) bool) {
+func ArrayHeapSort[T any](array []T, less func(array []T, i, j int) bool) {
 	siftDown := func(array []T, lo, hi, first int, less func(array []T, i, j int) bool) {
 		root := lo
 		for {
@@ -154,11 +154,11 @@ func ArrayHeapSort[T comparable](array []T, less func(array []T, i, j int) bool)
 }
 
 // ArrayQuickSort 数组快速排序
-func ArrayQuickSort[T comparable](array []T, less func(array []T, i, j int) bool) {
+func ArrayQuickSort[T any](array []T, less func(array []T, i, j int) bool) {
 	quickSort(array, 0, len(array)-1, less)
 }
 
-func quickSort[T comparable](array []T, left, right int, less func(array []T, i, j int) bool) {
+func quickSort[T any](array []T, left, right int, less func(array []T, i, j int) bool) {
 	if left < right {
 		partitionIndex := partition(array, left, right, less)
 		quickSort(array, left, partitionIndex-1, less)
@@ -166,7 +166,7 @@ func quickSort[T comparable](array []T, left, right int, less func(array []T, i,
 	}
 }
 
-func partition[T comparable](array []T, left, right int, less func(array []T, i, j int) bool) int {
+func partition[T any](array []T, left, right int, less func(array []T, i, j int) bool) int {
 	pivot := left
 	index := pivot + 1
 	for i := index; i <= right; i++ {
