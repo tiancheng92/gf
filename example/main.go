@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"gf"
+	"github.com/tiancheng92/gf"
 )
 
 type T struct {
