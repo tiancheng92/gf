@@ -1,4 +1,4 @@
-name: gf
+name: Build
 
 on:
   push:
