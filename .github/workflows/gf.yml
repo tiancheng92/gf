@@ -18,9 +18,8 @@ jobs:
       with:
         go-version: 1.18
 
-    - name: Build
+    - name: Run Build
       run: go build ./example/main.go
 
-    - name: Test
+    - name: Run Test
       run: go test -v github.com/tiancheng92/gf
-

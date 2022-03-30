@@ -1,6 +1,9 @@
 # gf - Generic Functions For Go 1.18+
 
-![Build And Test](https://github.com/tiancheng92/gf/actions/workflows/gf.yml/badge.svg)
+[![Build Status](https://github.com/tiancheng92/gf/workflows/Run%20Build/badge.svg)](https://github.com/tiancheng92/gf/actions)
+[![Test Status](https://github.com/tiancheng92/gf/workflows/Run%20Test/badge.svg)](https://github.com/tiancheng92/gf/actions)
+[![GoDoc](https://pkg.go.dev/badge/github.com/tiancheng92/gf?status.svg)](https://pkg.go.dev/github.com/tiancheng92/gf?tab=doc)
+[![Release](https://img.shields.io/github/release/tiancheng92/gf.svg?style=flat-square)](https://github.com/tiancheng92/gf/releases)
 
 ### 注意：部分方法仅可在Go版本大于等于1.18时使用！
 
