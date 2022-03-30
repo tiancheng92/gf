@@ -1,4 +1,7 @@
 # gf - Generic Functions For Go 1.18+
+
+![Build And Test](https://github.com/tiancheng92/gf/actions/workflows/gf.yml/badge.svg)
+
 ### 注意：部分方法仅可在Go版本大于等于1.18时使用！
 
 #### 什么是gf？
