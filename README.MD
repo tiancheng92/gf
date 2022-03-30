@@ -1,7 +1,7 @@
 # gf - Generic Functions For Go 1.18+
 
-[![Build Status](https://github.com/tiancheng92/gf/workflows/Run%20Build/badge.svg)](https://github.com/tiancheng92/gf/actions)
-[![Test Status](https://github.com/tiancheng92/gf/workflows/Run%20Test/badge.svg)](https://github.com/tiancheng92/gf/actions)
+[![Build Status](https://github.com/tiancheng92/gf/workflows/Build/badge.svg)](https://github.com/tiancheng92/gf/actions)
+[![Test Status](https://github.com/tiancheng92/gf/workflows/Test/badge.svg)](https://github.com/tiancheng92/gf/actions)
 [![GoDoc](https://pkg.go.dev/badge/github.com/tiancheng92/gf?status.svg)](https://pkg.go.dev/github.com/tiancheng92/gf?tab=doc)
 [![Release](https://img.shields.io/github/release/tiancheng92/gf.svg?style=flat-square)](https://github.com/tiancheng92/gf/releases)
 
