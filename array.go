@@ -178,3 +178,20 @@ func partition[T any](array []T, left, right int, less func(array []T, i, j int)
 	array[pivot], array[index-1] = array[index-1], array[pivot]
 	return index - 1
 }
+
+// ArraySplit 把数组按步长拆分为多个数组
+func ArraySplit[T any](array []T, step int) [][]T {
+	var startIndex = 0
+	var endIndex = 0
+	var result [][]T
+	length := len(array)
+	for {
+		endIndex = startIndex + step
+		if endIndex >= length {
+			result = append(result, array[startIndex:])
+			return result
+		}
+		result = append(result, array[startIndex:endIndex])
+		startIndex += step
+	}
+}

@@ -178,6 +178,12 @@ func main() {
 	fmt.Println(arr3)
 	fmt.Println("")
 
+	fmt.Println("Array Split")
+	fmt.Println("-----------------------------")
+	arr1 = []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 0}
+	fmt.Println(gf.ArraySplit(arr1, 2))
+	fmt.Println("")
+
 	fmt.Println("Convent String Bytes")
 	fmt.Println("-----------------------------")
 	fmt.Println(gf.StringToBytes("123"))

@@ -561,3 +561,31 @@ func TestArrayQuickSort(t *testing.T) {
 		})
 	}
 }
+
+func TestArraySplit(t *testing.T) {
+	type args struct {
+		array []int
+		step  int
+	}
+	tests := []struct {
+		name string
+		args args
+		want [][]int
+	}{
+		{
+			name: "success",
+			args: args{
+				array: []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 0},
+				step:  2,
+			},
+			want: [][]int{{1, 2}, {3, 4}, {5, 6}, {7, 8}, {9, 0}},
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if !reflect.DeepEqual(ArraySplit(tt.args.array, tt.args.step), tt.want) {
+				t.Errorf("ArrayQuickSort() = %v, want %v", tt.args.array, tt.want)
+			}
+		})
+	}
+}
