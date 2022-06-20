@@ -64,6 +64,7 @@ go get -u github.com/tiancheng92/gf
 | ArrayHeapSort      | 数组进行堆排序（仅需实现less方法：func(array []any, i, j int) bool）    |
 | ArrayQuickSort     | 数组进行快速排序（仅需实现less方法：func(array []any, i, j int) bool）   |
 | ArraySort          | 数组进行go原生排序（仅需实现less方法：func(array []any, i, j int) bool） |
+| ArraySplit         | 把一维数组按步长切分为二维数组                                         |
 
 * Code：[array.go](https://github.com/tiancheng92/gf/blob/main/array.go)
 * Test：[array_test.go](https://github.com/tiancheng92/gf/blob/main/array_test.go)
