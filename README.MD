@@ -79,3 +79,14 @@ go get -u github.com/tiancheng92/gf
 * Code：[url.go](https://github.com/tiancheng92/gf/blob/main/url.go)
 * Test：[url_test.go](https://github.com/tiancheng92/gf/blob/main/url_test.go)
 * Example：[example/main.go](https://github.com/tiancheng92/gf/blob/main/example/main.go)
+
+#### Percentile百分位数相关
+
+
+| 函数名        | 描述     |
+|:-----------|--------|
+| Percentile | 获取百分位数 |
+
+* Code：[percentile.go](https://github.com/tiancheng92/gf/blob/main/percentile.go)
+* Test：[percentile_test.go](https://github.com/tiancheng92/gf/blob/main/percentile_test.go)
+* Example：[example/main.go](https://github.com/tiancheng92/gf/blob/main/example/main.go)

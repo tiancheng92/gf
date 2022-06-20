@@ -216,4 +216,21 @@ func main() {
 	fmt.Println("-----------------------------")
 	url, _ := gf.UrlFormat("https://u:p@www.a.com:9999////////b/c/d.e?i=2&&i=1&&&&&&&&g=2&h=3&h=3&h=3&f=4#5")
 	fmt.Println(url)
+
+	fmt.Println("Percentile")
+	fmt.Println("-----------------------------")
+	p, _ := gf.Percentile(
+		60,
+		[]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10},
+		func(arr []int, i, j int) bool {
+			return arr[i] < arr[j]
+		},
+		func(arr []int, i int) float64 {
+			return float64(arr[i])
+		},
+		func(arr []int, i, j int) float64 {
+			return float64(arr[j]+arr[i]) / 2
+		},
+	)
+	fmt.Println(p)
 }
