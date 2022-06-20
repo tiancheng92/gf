@@ -33,8 +33,8 @@ go get -u github.com/tiancheng92/gf
 * Test：[string_test.go](https://github.com/tiancheng92/gf/blob/main/string_test.go)
 * Example：[example/main.go](https://github.com/tiancheng92/gf/blob/main/example/main.go)
 
-
 #### 浮点数相关
+
 * 注意：以下方法均使用泛型实现，可以用于任意底层类型为float64或float32的类型
 
 | 函数名        | 描述           |
@@ -45,8 +45,8 @@ go get -u github.com/tiancheng92/gf
 * Test：[float_test.go](https://github.com/tiancheng92/gf/blob/main/float_test.go)
 * Example：[example/main.go](https://github.com/tiancheng92/gf/blob/main/example/main.go)
 
-
 #### 切片相关
+
 * 注意：以下方法均使用泛型实现，可以用于任意类型的数组。
 
 | 函数名                | 描述                                                      |
@@ -82,11 +82,24 @@ go get -u github.com/tiancheng92/gf
 
 #### Percentile百分位数相关
 
-
 | 函数名        | 描述     |
 |:-----------|--------|
 | Percentile | 获取百分位数 |
 
 * Code：[percentile.go](https://github.com/tiancheng92/gf/blob/main/percentile.go)
 * Test：[percentile_test.go](https://github.com/tiancheng92/gf/blob/main/percentile_test.go)
+* Example：[example/main.go](https://github.com/tiancheng92/gf/blob/main/example/main.go)
+
+#### Period Time 周期时间相关
+
+| 函数名           | 描述       |
+|:--------------|----------|
+| NewPeriodTime | 创建周期时间对象 |
+| Append        | 添加时间段    |
+| Union         | 多个时间段取并集 |
+| Intersect     | 多个时间段取交集 |
+| Duration      | 获取总时长    |
+
+* Code：[period_time.go](https://github.com/tiancheng92/gf/blob/main/period_time.go)
+* Test：[period_time_test.go](https://github.com/tiancheng92/gf/blob/main/period_time_test.go)
 * Example：[example/main.go](https://github.com/tiancheng92/gf/blob/main/example/main.go)

@@ -5,12 +5,6 @@ import (
 	"math"
 )
 
-type PercentileInterface interface {
-	Less(i, j int) bool
-	Get(i int) float64
-	Avg(i int, j int) float64
-}
-
 // Percentile 获取百分位数
 func Percentile[T any](
 	percentile int,

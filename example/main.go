@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/tiancheng92/gf"
+	"time"
 )
 
 type T struct {
@@ -233,4 +234,32 @@ func main() {
 		},
 	)
 	fmt.Println(p)
+	fmt.Println("")
+
+	fmt.Println("Period Time Union")
+	fmt.Println("-----------------------------")
+	pt := gf.NewPeriodTime()
+	pt.Append(time.Now(), time.Now().Add(2*time.Hour))
+	pt.Append(time.Now().Add(-1*time.Hour), time.Now().Add(1*time.Hour))
+	pt.Append(time.Now().Add(10*time.Hour), time.Now().Add(20*time.Hour))
+	res := pt.Union()
+	for _, v := range res {
+		fmt.Println(v.StartTime.Format("2006-01-02 15:04:05"), v.EndTime.Format("2006-01-02 15:04:05"))
+	}
+	fmt.Println("")
+
+	fmt.Println("Period Time Intersect")
+	fmt.Println("-----------------------------")
+	pt = gf.NewPeriodTime()
+	pt.Append(time.Now(), time.Now().Add(2*time.Hour))
+	pt.Append(time.Now().Add(-1*time.Hour), time.Now().Add(1*time.Hour))
+	res = pt.Intersect()
+	for _, v := range res {
+		fmt.Println(v.StartTime.Format("2006-01-02 15:04:05"), v.EndTime.Format("2006-01-02 15:04:05"))
+	}
+	fmt.Println("")
+
+	fmt.Println("Period Time Duration")
+	fmt.Println("-----------------------------")
+	fmt.Println(res.Duration())
 }
